@@ -1,13 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, FileText, ImageIcon, ArrowRight } from "lucide-react"
+import { Calendar,  ImageIcon, ArrowRight } from "lucide-react"
 import { fetchActivityReports } from "@/lib/microcms"
 
 export async function ActivityReportsSection() {
   const data =await fetchActivityReports();
   const reports:activityReports[] = data.contents ?? [];
-  // console.log(reports);
 
   return (
     <section id="activities" className="py-16 bg-background">

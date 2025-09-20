@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, Users, Clock } from "lucide-react"
+import { Calendar, MapPin, Users } from "lucide-react"
 import { fetchEvents } from "@/lib/microcms"
 
 export async function EventsSection() {

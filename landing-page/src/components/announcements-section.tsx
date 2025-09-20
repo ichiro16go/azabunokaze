@@ -20,7 +20,7 @@ export default async function AnnouncementsSection() {
         </div>
 
         <div className="grid gap-6 max-w-4xl mx-auto">
-          {announcements.map((announcement: any) => (
+          {announcements.map((announcement: announcements) => (
             <Card
               key={announcement.id}
               className={`hover:shadow-lg transition-shadow ${
