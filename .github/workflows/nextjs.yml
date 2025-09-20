@@ -22,9 +22,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: landing-page
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,10 +34,13 @@ jobs:
         run: npm install -g pnpm
       - name: Install dependencies
         run: pnpm install
+        working-directory: landing-page
       - name: Build with Next.js
         run: pnpm build
+        working-directory: landing-page
       - name: Export static site
         run: pnpm next export
+        working-directory: landing-page
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
