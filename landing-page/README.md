@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Landing Page ドキュメント
 
-## Getting Started
+## 開発者向けドキュメント
 
-First, run the development server:
+### セットアップ手順
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Node.js（推奨: 最新 LTS）をインストール
+2. `pnpm install` で依存関係をインストール
+3. `pnpm dev` でローカルサーバーを起動
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ディレクトリ構成
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/` : アプリケーションの主要なソースコード
+- `public/` : 静的ファイル（画像・SVG など）
+- `components/` : React コンポーネント群
+- `lib/` : ユーティリティや API ラッパー
+- `type/` : 型定義
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 開発 Tips
 
-## Learn More
+- コードの変更は `src/` 配下で行う
+- 新しいコンポーネントは `src/components/` に追加
+- 型定義は `src/type/` に追加
+- スタイルは Tailwind CSS を利用
+- コミット前に `pnpm lint` で静的解析
 
-To learn more about Next.js, take a look at the following resources:
+### デプロイ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Vercel で自動デプロイ（main ブランチへの push で反映）
+- 環境変数は Vercel の管理画面で設定
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 非開発者（CMS 利用者）向けドキュメント
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 文章の編集方法
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- CMS（Contentful 等）にログイン
+- 対象ページのコンテンツを編集
+- 保存後、即座にサイトに反映（キャッシュがある場合は数分かかることも）
+
+### 注意点
+
+- 画像やファイルのアップロードは CMS の「Assets」から
+- 文章の改行や装飾は CMS のエディタ機能を利用
+- 公開前に「プレビュー」機能で確認
+
+### よくある質問
+
+- **Q: 編集内容が反映されない**
+  - A: キャッシュの影響で反映に数分かかる場合があります。しばらく待ってください。
+- **Q: 画像が表示されない**
+  - A: 画像 URL や公開設定を確認してください。
+
+---
+
+## 問い合わせ
+
+- 技術的な質問: 開発者チーム（Slack/メール）
+- CMS 操作の質問: サイト管理者
