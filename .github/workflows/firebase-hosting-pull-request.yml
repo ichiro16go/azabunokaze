@@ -14,8 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm ci && npm run build
+        working-directory: ./landing-page
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AZABUNOKAZE_LP_C88F6 }}
           projectId: azabunokaze-lp-c88f6
+          entryPoint: ./landing-page
