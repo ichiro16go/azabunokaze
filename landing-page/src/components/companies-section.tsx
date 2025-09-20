@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Building2, MapPin, Users, ExternalLink } from "lucide-react"
+import { Building2, MapPin,  ExternalLink } from "lucide-react"
 import { fetchCompanies } from "@/lib/microcms"
 
 export async function CompaniesSection() {
