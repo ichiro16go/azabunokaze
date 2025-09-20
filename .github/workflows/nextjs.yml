@@ -31,15 +31,19 @@ jobs:
           node-version: "20"
           cache: pnpm
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: |
+          npm install -g pnpm
+          echo "PNPM PATH: $(which pnpm)"
+      - name: Check pnpm version
+        run: pnpm --version
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
         working-directory: landing-page
       - name: Build with Next.js
-        run: pnpm build
+        run: npm run build
         working-directory: landing-page
       - name: Export static site
-        run: pnpm next export
+        run: npm run export
         working-directory: landing-page
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
