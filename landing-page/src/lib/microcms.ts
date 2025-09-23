@@ -7,7 +7,7 @@ export async function fetchAnnouncements() {
         headers: {
             'X-API-KEY': apiKey ?? '',
         },
-        cache: 'no-store',
+        
     });
 
     if (!res.ok) {
@@ -26,7 +26,7 @@ export async function fetchEvents() {
         headers: {
             'X-API-KEY': apiKey ?? '',
         },
-        cache: 'no-store',
+        
     }); 
     if (!res.ok) {
         const errorText = await res.text();
@@ -43,7 +43,7 @@ export async function fetchActivityReports() {
         headers: {
             'X-API-KEY': apiKey ?? '',
         },
-        cache: 'no-store',
+        
     }); 
     if (!res.ok) {
         const errorText = await res.text();
@@ -60,7 +60,7 @@ export async function fetchCompanies() {
         headers: {
             'X-API-KEY': apiKey ?? '',
         },
-        cache: 'no-store',
+        
     }); 
     if (!res.ok) {
         const errorText = await res.text();
